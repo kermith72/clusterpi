@@ -1,0 +1,4 @@
+---
+# vars file for common
+snmp_community: 'public'
+srv_monitoring: '192.168.1.250'

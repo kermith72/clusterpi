@@ -1,0 +1,12 @@
+- hosts: master
+  roles:
+    - common
+    - monitoring
+    - master
+
+- hosts: nodes
+  roles:
+    - common
+    - monitoring
+    - node
+

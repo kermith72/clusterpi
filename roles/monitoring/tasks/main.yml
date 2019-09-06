@@ -1,0 +1,28 @@
+- name: installation de l'agent snmp
+  apt:
+    name:
+    - "snmp"
+    - "snmpd"
+    state: present
+
+- name: configuration snmpd
+  template:
+    src: snmpd.conf.j2
+    dest: /etc/snmp/snmpd.conf
+    owner: root
+    group: root
+    mode: 0600
+
+- name: modification du niveau de verbosité
+  template:
+    src: snmpd.service.j2
+    dest: /lib/systemd/system/snmpd.service
+    owner: root
+    group: root
+    mode: 0644
+
+- name: restart snmp
+  service:
+    name: snmpd
+    daemon_reload: yes
+    state: restarted

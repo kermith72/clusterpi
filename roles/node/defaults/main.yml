@@ -1,0 +1,4 @@
+---
+# defaults file for common
+kubadm_token: sugarb.0123456789monito
+kubadm_pod_network: 10.244.0.0/16 # pour flannel
